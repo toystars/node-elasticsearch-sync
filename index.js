@@ -154,7 +154,7 @@ var createBatches = function (currentPriorityLevel) {
       });
     });
   } else {
-    console.log('ESMongoSync: Batch creation compvare. Processing...');
+    console.log('ESMongoSync: Batch creation complete. Processing...');
     processBatches();
   }
 };
@@ -283,6 +283,20 @@ ESMongoSync.init = function (mongoOplogUrl, elasticSearchUrl, callBack, watchers
     callBack: callBack
   };
   initialize(ESMongoSync.options.config);
+};
+
+
+/*
+* Function to add watchers dynamically
+* */
+ESMongoSync.addWatcher = function (watchers) {
+  if (_.isArray(watchers)) {
+    _.each(watchers, function (watcher) {
+      ESMongoSync.options.watchedCollections.push(watcher);
+    });
+  } else {
+    console.warn('ESMongoSync: Argument not an array. Argument must be an array.');
+  }
 };
 
 
