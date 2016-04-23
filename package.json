@@ -1,0 +1,29 @@
+{
+  "name": "node-elasticsearch-sync",
+  "version": "0.0.1",
+  "description": "ElasticSearch and MongoDB sync module for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toystars/node-elasticsearch-sync.git"
+  },
+  "keywords": [
+    "Elastic",
+    "Search",
+    "MongoDB",
+    "Sync",
+    "Mongo",
+    "Elastic",
+    "Elastic",
+    "Sync"
+  ],
+  "author": "Mustapha Babatunde <toystars2008@gmail.com> (http://bmustapha.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toystars/node-elasticsearch-sync/issues"
+  },
+  "homepage": "https://github.com/toystars/node-elasticsearch-sync#readme"
+}
