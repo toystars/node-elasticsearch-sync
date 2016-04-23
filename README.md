@@ -8,9 +8,6 @@ Please note that a replica set is needed for the package to tail mongoDB.
 
 
 ## How to use
-Add to meteor app -  
-
-Add with meteor
 ```bash
 $ npm install node-elasticsearch-sync --save
 ```
