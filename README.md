@@ -13,7 +13,7 @@ $ npm install node-elasticsearch-sync --save
 ```
 
 ## Sample usage
-After adding package to meteor app
+After adding package to node app
 
 ```javascript
 
