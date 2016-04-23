@@ -289,7 +289,7 @@ ESMongoSync.init = function (mongoOplogUrl, elasticSearchUrl, callBack, watchers
 /*
 * Function to add watchers dynamically
 * */
-ESMongoSync.addWatcher = function (watchers) {
+ESMongoSync.addWatchers = function (watchers) {
   if (_.isArray(watchers)) {
     _.each(watchers, function (watcher) {
       ESMongoSync.options.watchedCollections.push(watcher);
@@ -297,6 +297,14 @@ ESMongoSync.addWatcher = function (watchers) {
   } else {
     console.warn('ESMongoSync: Argument not an array. Argument must be an array.');
   }
+};
+
+
+/*
+ * Function to reconnect mongoOplog
+ * */
+ESMongoSync.reconnect = function () {
+  reconnect();
 };
 
 
