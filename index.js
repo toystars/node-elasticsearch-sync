@@ -272,10 +272,11 @@ var initialize = function (config) {
  * Method to initialize all option values
  * */
 ESMongoSync.init = function (mongoOplogUrl, elasticSearchUrl, callBack, watchers, documentsInBatch) {
+  Util.verifyInitArgs(arguments);
   if (!verifySystemEnv(mongoOplogUrl, elasticSearchUrl)) {
     throw new Error('ESMongoSync: The following environment variables are not defined: ' + unsetEnv.join(', ') + '. Set and restart server.');
   }
-  ESMongoSync.options.documentsInBatch = documentsInBatch;
+  ESMongoSync.options.documentsInBatch = documentsInBatch > 0 ? documentsInBatch : ESMongoSync.options.documentsInBatch;
   ESMongoSync.options.watchedCollections = watchers;
   ESMongoSync.options.config = {
     mongoOplogUrl: mongoOplogUrl || process.env['SEARCH_MONGO_URL'],
