@@ -1,6 +1,6 @@
 {
   "name": "node-elasticsearch-sync",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "ElasticSearch and MongoDB sync module for node",
   "main": "index.js",
   "scripts": {
