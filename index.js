@@ -41,9 +41,9 @@ var verifySystemEnv = function (mongoOplogUrl, elasticSearchUrl) {
   if (!mongoOplogUrl || !elasticSearchUrl) {
     _.each(processEnv, function (env) {
       if (!getSetStatus(env, serverEnv)) {
-      unsetEnv.push(env);
-    }
-  });
+        unsetEnv.push(env);
+      }
+    });
     return unsetEnv.length === 0;
   } else {
     return true;
@@ -164,7 +164,7 @@ var createBatches = function (currentPriorityLevel) {
  * Connect to main database
  * */
 var connectDB = function () {
-  MongoDriver.connect(process.env.SEARCH_MONGO_URL, function (error, db) {
+  MongoDriver.connect(process.env.SEARCH_MONGO_URL || ESMongoSync.options.config.mongoOplogUrl, function (error, db) {
     if (!error) {
       console.log('ESMongoSync: Connected to MONGO server successfully.');
       ESMongoSync.dbConnection.db = db;
@@ -178,8 +178,8 @@ var connectDB = function () {
 
 
 /*
-* Function to try reconnecting to Mongo Oplog
-* */
+ * Function to try reconnecting to Mongo Oplog
+ * */
 var reconnect = function () {
   _.delay(tail, 5000, ESMongoSync.options.config.mongoOplogUrl);
 };
@@ -288,8 +288,8 @@ ESMongoSync.init = function (mongoOplogUrl, elasticSearchUrl, callBack, watchers
 
 
 /*
-* Function to add watchers dynamically
-* */
+ * Function to add watchers dynamically
+ * */
 ESMongoSync.addWatchers = function (watchers) {
   if (_.isArray(watchers)) {
     _.each(watchers, function (watcher) {
