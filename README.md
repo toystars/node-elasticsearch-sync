@@ -144,6 +144,7 @@ Check issues for current issues.
 ## Credits
 
 - [Mustapha Babatunde](https://twitter.com/iAmToystars)
+- [Andy Collins](https://github.com/andymcollins)
 
 ## License
 
