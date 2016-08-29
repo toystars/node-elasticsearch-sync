@@ -1,4 +1,4 @@
-# node-elasticsearch-sync
+# node-elasticsearch-sync [![Build Status](https://travis-ci.org/toystars/node-elasticsearch-sync.svg?branch=master)](https://travis-ci.org/toystars/node-elasticsearch-sync) [![Coverage Status](https://coveralls.io/repos/github/toystars/node-elasticsearch-sync/badge.svg?branch=master)](https://coveralls.io/github/toystars/node-elasticsearch-sync?branch=master)
 ElasticSearch and MongoDB sync module for node
 
 
