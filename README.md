@@ -65,6 +65,35 @@ ESMongoSync.init(watcherArray, null);
 All other configurations are as they were in previous versions.
 
 
+## More usage info
+
+Below is more info about sample watcher:
+
+```javascript
+let sampleWatcher = {
+  collectionName: 'users', 
+  index: 'person',
+  type: 'users',
+  transformFunction: transformFunction,
+  fetchExistingDocuments: true,
+  priority: 0
+};
+```
+
+- **collectionName** - MongoDB collection to watch.
+
+- **index** - ElasticSearch index where documents from watcher collection is saved.
+
+- **type** - ElasticSearch type given to documents from watcher collection
+
+- **transformFunction** - Function that gets run each time watcher document is processed. Takes 3 parameters (watcher object, document and callBack function). The callBack function is to be called with processed document as argument. (can be null)
+
+- **fetchExistingDocuments** - Specifies if existing documents in collection are to be pulled on initialization
+
+- **priority** - Integer (starts from 0). Useful if certain watcher depends on other watchers. Watchers with lower priorities get processed before watchers with higher priorities.
+
+
+
 ## Extra APIs
 
 #### Reindexing
