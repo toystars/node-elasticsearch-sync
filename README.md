@@ -51,7 +51,7 @@ ESMongoSync.init(watcherArray, null);
 
 
 /*
- * The init function takes six (2) arguments in all, as follows
+ * The init function takes two (2) arguments in all, as follows
  * 1. Array of wather objects specifying which mongoDB collections to pull from and keep in sync with ES cluster
  * 2. ELasticSearch object (can be null) - an already defined ElasticSerach object (returned from elasticsearch cluster connection) can be passed into the init() function to ensure that the same
  *    object used in cluster connection is used in package. This only reduces the number of connections to elasticsearch by one and might offer no practical performance engancement.
