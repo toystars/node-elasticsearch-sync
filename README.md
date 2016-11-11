@@ -11,7 +11,7 @@ Please note that a replica set is needed for the package to tail mongoDB.
 ## How to use
 
 ```bash
-$ npm install node-elasticsearch-sync --save
+npm install node-elasticsearch-sync --save
 ```
 
 ## Sample usage (version >= 1.0.0)
@@ -64,6 +64,8 @@ All other configurations are as they were in previous versions.
 
 ## More usage info
 
+### Watchers
+
 Below is more info about sample watcher:
 
 ```javascript
@@ -83,6 +85,39 @@ let sampleWatcher = {
 - **transformFunction** - Function that gets run each time watcher document is processed. Takes 3 parameters (watcher object, document and callBack function). The callBack function is to be called with processed document as argument. (can be null)
 - **fetchExistingDocuments** - Specifies if existing documents in collection are to be pulled on initialization
 - **priority** - Integer (starts from 0). Useful if certain watcher depends on other watchers. Watchers with lower priorities get processed before watchers with higher priorities.
+
+### Logging
+
+This package uses the [debug](https://www.npmjs.com/package/debug) library for logging. You can enable debugging by setting the `DEBUG` environment variable:
+
+```bash
+# enable all debugging (including other packages)
+set DEBUG=*
+# run the program to be debugged as usual
+npm start
+
+# enable basic debugging for this package
+DEBUG=node-elasticsearch-sync:info npm start
+
+# enable basic debugging + errors for this package (recommended setting)
+DEBUG=node-elasticsearch-sync:info,node-elasticsearch-sync:error npm start
+
+# enable all debugging for this package
+DEBUG=node-elasticsearch-sync:* npm start
+
+# enable all debugging for this package except the oplog stuff
+DEBUG=node-elasticsearch-sync:*,-node-elasticsearch-sync:oplog npm start
+```
+
+The following debuggers are available:
+
+- `node-elasticsearch-sync:error` - error logging (should always be enabled)
+- `node-elasticsearch-sync:info` - basic logging (e.g. initialization, database connection)
+- `node-elasticsearch-sync:validation` - validation information
+- `node-elasticsearch-sync:transform` - validation information
+- `node-elasticsearch-sync:batch` - info about batch processing
+- `node-elasticsearch-sync:oplog` - very detailed info about oplog events
+- `node-elasticsearch-sync:elasticsearch` - very detailed info about oplog events
 
 ## Extra APIs
 
