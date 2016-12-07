@@ -275,6 +275,7 @@ Check [GitHub issues](https://github.com/toystars/node-elasticsearch-sync/issues
 
 - [Mustapha Babatunde](https://twitter.com/iAmToystars)
 - [Andy Collins](https://github.com/andymcollins)
+- [Daniel Nüst](https://github.com/nuest)
 
 ## License
 
